@@ -103,9 +103,10 @@ namespace GithubActionsLab
         }
 
         [Test]
-        public void Divide_ByZeroGrantMielak()
+        public void Divide_ByZero()
         {
-            Assert.Throws<DivideByZeroException>(() => Program.Divide("1", "0"));
+            Assert.AreEqual(double.PositiveInfinity, Program.Divide("1", "0"));
+            Assert.AreEqual(double.NegativeInfinity, Program.Divide("-1", "0"));
         }
 
         [Test]
